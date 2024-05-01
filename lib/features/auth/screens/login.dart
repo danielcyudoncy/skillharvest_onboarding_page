@@ -37,41 +37,43 @@ class Login extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Gap(20),
-            const EmailTextField(),
-            const Gap(30),
-            const PasswordTextField(),
-            const Gap(10),
-            const ForgotPassword(),
-            const Gap(30),
-            PrimaryButton(text: 'Login', onTap: () {}),
-            const Gap(30),
-            BottomActionWidget(
-                title: "I Don’t have an account? ",
-                option: 'Sign up?',
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const Signup(),
-                    ),
-                  );
-                }),
-            const Gap(30),
-            const OrLoginWidget(),
-            const Gap(30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(AppImage.facebookSvg),
-                const Gap(30),
-                SvgPicture.asset(AppImage.googleSvg),
-              ],
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Gap(20),
+              const EmailTextField(),
+              const Gap(30),
+              const PasswordTextField(),
+              const Gap(10),
+              const ForgotPassword(),
+              const Gap(30),
+              PrimaryButton(text: 'Login', onTap: () {}),
+              const Gap(30),
+              BottomActionWidget(
+                  title: "I Don’t have an account? ",
+                  option: 'Sign up?',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Signup(),
+                      ),
+                    );
+                  }),
+              const Gap(30),
+              const OrLoginWidget(),
+              const Gap(30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(AppImage.facebookSvg),
+                  const Gap(30),
+                  SvgPicture.asset(AppImage.googleSvg),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

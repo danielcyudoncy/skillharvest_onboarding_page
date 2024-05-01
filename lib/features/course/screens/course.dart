@@ -35,66 +35,68 @@ class Course extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SearchTextField(),
-          SizedBox(
-            height: 94,
-            child: ListView(
-              padding: const EdgeInsets.only(left: 16),
-              scrollDirection: Axis.horizontal,
-              children: const [
-                CourseCategory(
-                  categoryImage: AppImage.languageIllus,
-                  categoryText: 'Language',
-                  color: Pallete.blueColor,
-                ),
-                Gap(16),
-                CourseCategory(
-                  categoryImage: AppImage.paintIllus,
-                  categoryText: 'Painting',
-                  color: Pallete.purpleColor,
-                ),
-              ],
-            ),
-          ),
-          const ChooseCourse(),
-          SizedBox(
-            height: 325,
-            child: ListView(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const SelectedCourse(),
-                      ),
-                    );
-                  },
-                  child: const CourseItem(
-                    courseTitle: 'Product Design v1.0',
-                    courseValue: '190',
-                    facilitator: 'Robertson Connie',
-                    totalHours: '14',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SearchTextField(),
+            SizedBox(
+              height: 94,
+              child: ListView(
+                padding: const EdgeInsets.only(left: 16),
+                scrollDirection: Axis.horizontal,
+                children: const [
+                  CourseCategory(
+                    categoryImage: AppImage.languageIllus,
+                    categoryText: 'Language',
+                    color: Pallete.blueColor,
                   ),
-                ),
-                const CourseItem(
-                  courseTitle: 'Java Development',
-                  courseValue: '200',
-                  facilitator: 'Nguyen Shane',
-                  totalHours: '18',
-                ),
-                const CourseItem(
-                  courseTitle: 'Visual Design',
-                  courseValue: '250',
-                  facilitator: 'Bert Pullman',
-                  totalHours: '16',
-                ),
-              ],
+                  Gap(16),
+                  CourseCategory(
+                    categoryImage: AppImage.paintIllus,
+                    categoryText: 'Painting',
+                    color: Pallete.purpleColor,
+                  ),
+                ],
+              ),
             ),
-          )
-        ],
+            const ChooseCourse(),
+            SizedBox(
+              height: 325,
+              child: ListView(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const SelectedCourse(),
+                        ),
+                      );
+                    },
+                    child: const CourseItem(
+                      courseTitle: 'Product Design v1.0',
+                      courseValue: '190',
+                      facilitator: 'Robertson Connie',
+                      totalHours: '14',
+                    ),
+                  ),
+                  const CourseItem(
+                    courseTitle: 'Java Development',
+                    courseValue: '200',
+                    facilitator: 'Nguyen Shane',
+                    totalHours: '18',
+                  ),
+                  const CourseItem(
+                    courseTitle: 'Visual Design',
+                    courseValue: '250',
+                    facilitator: 'Bert Pullman',
+                    totalHours: '16',
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
